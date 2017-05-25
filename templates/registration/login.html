@@ -19,12 +19,14 @@
             </div>
         </form>
 
-        <p style="padding-top: 15px; text-align: center">
-            <a href="{% url 'password_reset' %}">Lost password?</a>
-        </p>
+        <!-- Password reset if appropriate
+            <p style="padding-top: 15px; text-align: center">
+                <a href="{% url 'password_reset' %}">Lost password?</a>
+            </p>
+        -->
 
         {% if form.errors %}
-            <p style="color: red; text-align: center">
+            <p style="color: red; text-align: center; padding-top: 15px">
                 Your username and password didn't match. Please try again.
             </p>
         {% endif %}

@@ -1,10 +1,13 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
 from .models import Brother
 
 
+@login_required
 def index(request):
     """
     View function for home page of the mystic circle (portal) of brothers ALRIGHT
@@ -23,10 +26,10 @@ def index(request):
 from django.views import generic
 
 
-class BrotherListView(generic.ListView):
+class BrotherListView(LoginRequiredMixin, generic.ListView):
     model = Brother
     paginate_by = 2
 
 
-class BrotherDetailView(generic.DetailView):
+class BrotherDetailView(LoginRequiredMixin, generic.DetailView):
     model = Brother
