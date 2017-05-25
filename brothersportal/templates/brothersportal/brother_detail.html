@@ -1,0 +1,43 @@
+{% extends "brothersportal_generic.html" %}
+
+{% block content %}
+    <h2 style="padding-bottom: 30px !important;">Brother information</h2>
+    <h3>{{ brother.first_name }} {{ brother.last_name }}</h3>
+    <div class="row">
+        <div class="3u 12u$(medium)" style="text-align: right"><strong>Year</strong></div>
+        <div class="6u 12u$(medium)" style="text-align: left">{{ brother.year }}</div>
+    </div>
+    <div class="row">
+        <div class="3u 12u$(medium)" style="text-align: right"><strong>Graduation year</strong></div>
+        <div class="6u 12u$(medium)" style="text-align: left">{{ brother.grad_year }}</div>
+    </div>
+    <div class="row">
+        <div class="3u 12u$(medium)" style="text-align: right"><strong>Pledge class</strong></div>
+        <div class="6u 12u$(medium)" style="text-align: left">{{ brother.pledge_class }}</div>
+    </div>
+    <div class="row">
+        <div class="3u 12u$(medium)" style="text-align: right"><strong>Major(s)</strong></div>
+        <div class="6u 12u$(medium)" style="text-align: left">
+            {{ brother.major }}
+            {% if brother.second_major %}
+                , {{ brother.second_major }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="3u 12u$(medium)" style="text-align: right"><strong>Company</strong></div>
+        <div class="6u 12u$(medium)" style="text-align: left">{{ brother.company }}</div>
+    </div>
+    <div class="row">
+        <div class="3u 12u$(medium)" style="text-align: right"><strong>Work / home location</strong></div>
+        <div class="6u 12u$(medium)" style="text-align: left">{{ brother.city }}, {{ brother.state }}</div>
+    </div>
+    <div class="row">
+        <div class="3u 12u$(medium)" style="text-align: right"><strong>Phone number</strong></div>
+        <div class="6u 12u$(medium)" style="text-align: left">{{ brother.phone_number }}</div>
+    </div>
+    <div class="row">
+        <div class="3u 12u$(medium)" style="text-align: right"><strong>Email</strong></div>
+        <div class="6u 12u$(medium)" style="text-align: left">{{ brother.email }}</div>
+    </div>
+{% endblock %}

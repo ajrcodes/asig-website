@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ΑΣΦ UVA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="{% url 'index' %}">ΑΣΦ</a></h1>
+								<span> Brothers Portal </span>
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li><a href="#">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+								</ul>
+							</nav>
+
+					</header>
+				</div>
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div class="container">
+						<div class="row 200%">
+							<div class="2u 12u$(medium)">
+								<div id="sidebar">
+
+									<!-- Sidebar -->
+										<section>
+											<a href="#" style="text-decoration: none">Search</a> </br>
+											<a href="{% url 'brothers' %}" style="text-decoration: none">All brothers</a> </br>
+											<a href="#" style="text-decoration: none">All actives</a> </br>
+											<a href="#" style="text-decoration: none">All alumni</a>
+											
+										</section>
+
+								</div>
+							</div>
+							<div class="10u 12u$(medium) important(medium)">
+								<div id="content">
+
+									<!-- Content -->
+									{% block content %}{% endblock %}
+
+                                    {% block pagination %}
+                                        {% if is_paginated %}
+                                            <div class="pagination" style="text-align: center">
+                                                <span class="page-links">
+                                                    {% if page_obj.has_previous %}
+                                                        <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"
+                                                           style="text-decoration: none">
+                                                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                                        </a>
+                                                    {% endif %}
+                                                    <span class="page-current">
+                                                        Showing {{ page_obj.start_index }}-{{ page_obj.end_index }}
+                                                        of {{ page_obj.paginator.count }} results
+                                                    </span>
+                                                    {% if page_obj.has_next %}
+                                                        <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">
+                                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                        </a>
+                                                    {% endif %}
+                                                </span>
+                                            </div>
+                                        {% endif %}
+                                    {% endblock %}
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="12u">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; ΑΣΦ ZY Chapter. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

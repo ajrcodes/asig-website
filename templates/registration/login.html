@@ -1,0 +1,33 @@
+{% extends "login_generic.html" %}
+
+{% block content %}
+
+    <div class="6u 12u$(medium) important(medium)" style="margin: auto">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div>
+              {{ form.username.label_tag }}
+              {{ form.username }}
+            </div>
+            <div>
+              {{ form.password.label_tag }}
+              {{ form.password }}
+            </div>
+            <div style="padding-top: 25px">
+              <input class="12u 12u$(medium) important(medium)" type="submit" value="Login" />
+              <input type="hidden" name="next" value="{{ next }}" />
+            </div>
+        </form>
+
+        <p style="padding-top: 15px; text-align: center">
+            <a href="{% url 'password_reset' %}">Lost password?</a>
+        </p>
+
+        {% if form.errors %}
+            <p style="color: red; text-align: center">
+                Your username and password didn't match. Please try again.
+            </p>
+        {% endif %}
+    </div>
+
+{% endblock %}

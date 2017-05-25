@@ -1,0 +1,26 @@
+{% extends "brothersportal_generic.html" %}
+
+{% block content %}
+    <h3><i>Matches found for:</i><span style="font-weight: normal"> All brothers </span></h3>
+
+    {% if brother_list %}
+        <div class="row">
+            {% for brother in brother_list %}
+                <section class="box feature">
+                    <a href="{{ brother.get_absolute_url }}" style="text-decoration: none; color: black"> <div class="inner">
+                        <b>{{ brother.first_name }} {{ brother.last_name }}</b>
+                        <p>Year: {{ brother.year }}</p>
+                        <p>Pledge Class: {{ brother.pledge_class }}</p>
+                    </div></a>
+                </section>
+                {% if forloop.counter|divisibleby:4%}
+                    </div>
+                    <div class="row">
+                {% endif %}
+            {% endfor %}
+            </div>
+    {% else %}
+      <p>No matches found.</p>
+    {% endif %}
+
+{% endblock %}
