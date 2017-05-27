@@ -14,20 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.conf.urls import include
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
+    url(r'^', include('core.urls')),
     url(r'^admin/', admin.site.urls),
-]
-
-# Use include() to add URLS from the brothersportal application
-from django.conf.urls import include
-
-urlpatterns += [
     url(r'^brothersportal/', include('brothersportal.urls')),
 ]
 
 #Add Django site authentication urls (for registration, logout, password management)
 urlpatterns += [
+    url(r'^accounts/login/',
+        auth_views.LoginView.as_view(redirect_authenticated_user=True,),
+        name='login'),
     url(r'^accounts/', include('django.contrib.auth.urls')),
 ]

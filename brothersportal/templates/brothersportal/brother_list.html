@@ -1,7 +1,7 @@
 {% extends "brothersportal_generic.html" %}
 
 {% block content %}
-    <h3><i>Matches found for:</i><span style="font-weight: normal"> All brothers </span></h3>
+    <h3><i>Matches found for:</i><span style="font-weight: normal"> {{ search_parameters }} </span></h3>
 
     {% if brother_list %}
         <div class="row">

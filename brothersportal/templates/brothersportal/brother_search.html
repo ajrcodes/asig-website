@@ -1,0 +1,63 @@
+{% extends "brothersportal_generic.html" %}
+
+{% block content %}
+
+    <h3>Search</h3>
+
+    <div class="12u 12u$(medium) important(medium)">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="6u 12u$(medium) important(medium)">
+                    {{ form.first_name.label}}
+                    {{ form.first_name }}
+                </div>
+                <div class="6u 12u$(medium) important(medium)">
+                    {{ form.last_name.label}}
+                    {{ form.last_name }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="6u 12u$(medium) important(medium)" style="padding-top: 0px">
+                    {{ form.year.label}}
+                    {{ form.year }}
+                </div>
+                <div class="6u 12u$(medium) important(medium)" style="padding-top: 0px">
+                    {{ form.grad_year.label}} </br>
+                    {{ form.grad_year }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="6u 12u$(medium) important(medium)" style="padding-top: 0px">
+                    {{ form.pledge_class.label}}
+                    {{ form.pledge_class }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="6u 12u$(medium) important(medium)" style="padding-top: 0px">
+                    {{ form.major.label}}
+                    {{ form.major }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="6u 12u$(medium) important(medium)" style="padding-top: 0px">
+                    {{ form.company.label}}
+                    {{ form.company }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="6u 12u$(medium) important(medium)" style="padding-top: 0px">
+                    {{ form.city.label}}
+                    {{ form.city }}
+                </div>
+                <div class="6u 12u$(medium)" style="padding-top: 0px">
+                    {{ form.state.label}}
+                    {{ form.state }}
+                </div>
+            </div>
+            <div style="padding-top: 25px">
+                <input type="submit" value="Search" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

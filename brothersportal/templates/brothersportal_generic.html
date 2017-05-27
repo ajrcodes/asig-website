@@ -23,7 +23,7 @@
 
 						<!-- Logo -->
 							<div id="logo">
-								<h1><a href="{% url 'index' %}">ΑΣΦ</a></h1>
+								<h1><a href="{% url 'portal' %}">ΑΣΦ</a></h1>
 								<span> Brothers Portal </span>
 							</div>
 
@@ -48,10 +48,10 @@
 
 									<!-- Sidebar -->
 										<section>
-											<a href="#" style="text-decoration: none">Search</a> </br>
+											<a href="{% url 'search-brothers' %}" style="text-decoration: none">Search</a> </br>
 											<a href="{% url 'brothers' %}" style="text-decoration: none">All brothers</a> </br>
-											<a href="#" style="text-decoration: none">All actives</a> </br>
-											<a href="#" style="text-decoration: none">All alumni</a>
+											<a href="{% url 'actives' %}" style="text-decoration: none">All actives</a> </br>
+											<a href="{% url 'alumni' %}" style="text-decoration: none">All alumni</a>
 											
 										</section>
 
