@@ -126,7 +126,7 @@ def searchresults(request):
     search_parameters = ', '.join(request.session['search_parameters'])
 
     # Setup paginator
-    paginator = Paginator(brothers_list, 2)
+    paginator = Paginator(brothers_list, 12)
     page = request.GET.get('page')
     try:
         objects = paginator.page(page)
