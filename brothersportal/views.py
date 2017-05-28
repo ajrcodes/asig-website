@@ -19,7 +19,7 @@ def portal(request):
     # Generate count of all total brothers
     num_brothers = Brother.objects.all().count()
     num_alumni = Brother.objects.filter(year="Alumni").count()
-    num_actives = Brother.objects.filter(year= not "Alumni").count()
+    num_actives = Brother.objects.exclude(year="Alumni").count()
 
     # Render the HTML template index.html with the data in the context variable
     return render(
@@ -143,7 +143,8 @@ def all_actives(request):
     View function to display all the actives in the database
     """
     # Get list of alumni
-    actives_list = Brother.objects.filter(y)
+    actives_list = Brother.objects.exclude(year="Alumni")
+    print(actives_list)
     # render template with proper list and parameters
     return render(
         request,
