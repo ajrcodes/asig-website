@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.views import generic
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.core import serializers
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Models
 from .models import Brother
@@ -32,9 +36,9 @@ def portal(request):
 
 
 @login_required
-def search_brothers(request):
+def search_form(request):
     """
-    View function for searching the brothersportal
+    View function to handle the search form inputs
     """
     # If this is a POST request then process the Form data
     if request.method == 'POST':
@@ -44,6 +48,9 @@ def search_brothers(request):
 
         # Check if the form is valid:
         if form.is_valid():
+            """
+            View function to handle displaying search results
+            """
             # Set up lists to filter the results and get the parameters
             search_results = Brother.objects.all()
             search_parameters = []
@@ -52,6 +59,7 @@ def search_brothers(request):
                 search_parameters.append(form.data['first_name'])
                 search_results = list(filter(lambda x: x in search_results,
                                              Brother.objects.filter(first_name=form.data['first_name'])))
+
             if form.data['last_name']:
                 search_parameters.append(form.data['last_name'])
                 search_results = list(filter(lambda x: x in search_results,
@@ -85,23 +93,57 @@ def search_brothers(request):
                 search_results = list(filter(lambda x: x in search_results,
                                              Brother.objects.filter(first_name=form.data['last_name'])))
 
-            # Pass in filtered list of brothers and list of parameters
-            search_parameters = ', '.join(search_parameters)
-            return render(
-                request,
-                'brothersportal/brother_list.html',
-                context={"brother_list": search_results,
-                         "search_parameters": search_parameters}
-            )
+            # Store results in a session by serializing it
+            request.session['search_results'] = serializers.serialize("json", search_results)
+            request.session['search_parameters'] = search_parameters
+
+            return HttpResponseRedirect(reverse('search-results'))
 
     # If this is a GET (or any other method) create the default form.
     else:
         form = SearchBrothersForm()
 
+        return render(
+            request,
+            'brothersportal/brother_search.html',
+            {'form': form}
+        )
+
+
+@login_required
+def searchresults(request):
+    """
+     View function to display all results from a search.  
+     NOTE:  Was playing around with the serializers, not sure how to properly cache the results 
+            to prevent double queries (from retrieving objects based on pk).  
+            Figure this pup out in the future.. works for now.
+    """
+    # Get list of all brothers
+    brothers_list = []
+    for obj in serializers.deserialize("json", request.session['search_results']):
+        pk = obj.object.pk
+        brothers_list.append(Brother.objects.get(pk=pk))
+    search_parameters = ', '.join(request.session['search_parameters'])
+
+    # Setup paginator
+    paginator = Paginator(brothers_list, 2)
+    page = request.GET.get('page')
+    try:
+        objects = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        objects = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        objects = paginator.page(paginator.num_pages)
+
+    # render template with proper list and parameters
     return render(
         request,
-        'brothersportal/brother_search.html',
-        {'form': form}
+        'brothersportal/brother_list.html',
+        context={"brother_list": objects,
+                 "search_parameters": search_parameters,
+                 "is_paginated": True}
     )
 
 
@@ -110,14 +152,28 @@ def all_brothers(request):
     """
     View function to display all the brothers in the database
     """
-    # Get list of alumni
+    # Get list of all brothers
     brothers_list = Brother.objects.all()
+
+    # Setup paginator
+    paginator = Paginator(brothers_list, 12)
+    page = request.GET.get('page')
+    try:
+        objects = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        objects = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        objects = paginator.page(paginator.num_pages)
+
     # render template with proper list and parameters
     return render(
         request,
         'brothersportal/brother_list.html',
-        context={"brother_list": brothers_list,
-                 "search_parameters": "All brothers"}
+        context={"brother_list": objects,
+                 "search_parameters": "All brothers",
+                 "is_paginated": True}
     )
 
 
@@ -128,12 +184,26 @@ def all_alumni(request):
     """
     # Get list of alumni
     alumni_list = Brother.objects.filter(year="Alumni")
+
+    # Setup paginator
+    paginator = Paginator(alumni_list, 12)
+    page = request.GET.get('page')
+    try:
+        objects = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        objects = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        objects = paginator.page(paginator.num_pages)
+
     # render template with proper list and parameters
     return render(
         request,
         'brothersportal/brother_list.html',
-        context={"brother_list": alumni_list,
-                 "search_parameters": "All alumni"}
+        context={"brother_list": objects,
+                 "search_parameters": "All alumni",
+                 "is_paginated": True}
     )
 
 
@@ -142,15 +212,28 @@ def all_actives(request):
     """
     View function to display all the actives in the database
     """
-    # Get list of alumni
+    # Get list of actives
     actives_list = Brother.objects.exclude(year="Alumni")
-    print(actives_list)
+
+    # Setup paginator
+    paginator = Paginator(actives_list, 12)
+    page = request.GET.get('page')
+    try:
+        objects = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        objects = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        objects = paginator.page(paginator.num_pages)
+
     # render template with proper list and parameters
     return render(
         request,
         'brothersportal/brother_list.html',
-        context={"brother_list": actives_list,
-                 "search_parameters": "All actives"}
+        context={"brother_list": objects,
+                 "search_parameters": "All actives",
+                 "is_paginated": True}
     )
 
 

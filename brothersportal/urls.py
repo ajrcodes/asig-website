@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^brothers/actives$', views.all_actives, name='actives'),
     url(r'^brothers/alumni$', views.all_alumni, name='alumni'),
     url(r'^brother/(?P<pk>\d+)$', views.BrotherDetailView.as_view(), name='brother-detail'),
-    url(r'^search/$', views.search_brothers, name='search-brothers'),
+    url(r'^search/$', views.search_form, name='search-brothers'),
+    url(r'^search/results/$', views.searchresults, name='search-results'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

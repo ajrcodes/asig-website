@@ -6,13 +6,15 @@
     {% if brother_list %}
         <div class="row">
             {% for brother in brother_list %}
-                <section class="box feature">
-                    <a href="{{ brother.get_absolute_url }}" style="text-decoration: none; color: black"> <div class="inner">
-                        <b>{{ brother.first_name }} {{ brother.last_name }}</b>
-                        <p>Year: {{ brother.year }}</p>
-                        <p>Pledge Class: {{ brother.pledge_class }}</p>
-                    </div></a>
-                </section>
+                <div class="box feature">
+                    <a href="{{ brother.get_absolute_url }}" style="text-decoration: none; color: black">
+                        <div class="inner" style="padding: 3em 2em 2em 2em !important;">
+                            <b>{{ brother.first_name }} {{ brother.last_name }}</b>
+                            <p>Year: {{ brother.year }}</p>
+                            <p>Pledge Class: {{ brother.pledge_class }}</p>
+                        </div>
+                    </a>
+                </div>
                 {% if forloop.counter|divisibleby:4%}
                     </div>
                     <div class="row">
