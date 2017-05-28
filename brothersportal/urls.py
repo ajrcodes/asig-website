@@ -13,5 +13,6 @@ urlpatterns = [
     url(r'^brother/(?P<pk>\d+)$', views.BrotherDetailView.as_view(), name='brother-detail'),
     url(r'^search/$', views.search_form, name='search-brothers'),
     url(r'^search/results/$', views.searchresults, name='search-results'),
+    url(r'^export/csv/$', views.export_data_csv, name='export_data_csv'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

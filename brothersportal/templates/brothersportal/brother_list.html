@@ -1,8 +1,16 @@
 {% extends "brothersportal_generic.html" %}
 
 {% block content %}
-    <h3><i>Matches found for:</i><span style="font-weight: normal"> {{ search_parameters }} </span></h3>
-
+    <div class="12u 12u$(medium) important(medium)">
+        <div class="row">
+            <div class="6u 12u$(medium) important(medium)" style="margin-left: -10px">
+                <h3><i>Matches found for:</i><span style="font-weight: normal"> {{ search_parameters }} </span></h3>
+            </div>
+            <div class="6u 12u$(medium) important(medium)" style="text-align: right; padding-right: 25px">
+                <a href="{% url 'export_data_csv' %}" style="text-decoration: none;">Export results</a>
+            </div>
+        </div>
+    </div>
     {% if brother_list %}
         <div class="row">
             {% for brother in brother_list %}
@@ -24,5 +32,4 @@
     {% else %}
       <p>No matches found.</p>
     {% endif %}
-
 {% endblock %}

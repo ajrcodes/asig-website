@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.urls import reverse
 from django.core import serializers
+import csv
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -155,6 +157,9 @@ def all_brothers(request):
     # Get list of all brothers
     brothers_list = Brother.objects.all()
 
+    # Store results in a session by serializing it
+    request.session['search_results'] = serializers.serialize("json", brothers_list)
+
     # Setup paginator
     paginator = Paginator(brothers_list, 12)
     page = request.GET.get('page')
@@ -184,6 +189,9 @@ def all_alumni(request):
     """
     # Get list of alumni
     alumni_list = Brother.objects.filter(year="Alumni")
+
+    # Store results in a session by serializing it
+    request.session['search_results'] = serializers.serialize("json", alumni_list)
 
     # Setup paginator
     paginator = Paginator(alumni_list, 12)
@@ -215,6 +223,9 @@ def all_actives(request):
     # Get list of actives
     actives_list = Brother.objects.exclude(year="Alumni")
 
+    # Store results in a session by serializing it
+    request.session['search_results'] = serializers.serialize("json", actives_list)
+
     # Setup paginator
     paginator = Paginator(actives_list, 12)
     page = request.GET.get('page')
@@ -235,6 +246,26 @@ def all_actives(request):
                  "search_parameters": "All actives",
                  "is_paginated": True}
     )
+
+
+@login_required
+def export_data_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="results.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['First name', 'Last name', 'Email address'])
+
+    # Get list of objects to export
+    brothers_list = []
+    for obj in serializers.deserialize("json", request.session['search_results']):
+        pk = obj.object.pk
+        brothers_list.append(Brother.objects.values_list('first_name', 'last_name', 'email').get(pk=pk))
+
+    for obj in brothers_list:
+        writer.writerow(obj)
+
+    return response
 
 
 class BrotherListView(LoginRequiredMixin, generic.ListView):

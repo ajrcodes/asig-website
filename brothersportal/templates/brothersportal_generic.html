@@ -52,7 +52,6 @@
 											<a href="{% url 'brothers' %}" style="text-decoration: none">All brothers</a> </br>
 											<a href="{% url 'actives' %}" style="text-decoration: none">All actives</a> </br>
 											<a href="{% url 'alumni' %}" style="text-decoration: none">All alumni</a>
-											
 										</section>
 
 								</div>
@@ -65,7 +64,7 @@
 
                                     {% block pagination %}
                                         {% if is_paginated %}
-                                            <div class="pagination" style="padding-top: 25px;">
+                                            <div class="pagination" style="padding-top: 50px; margin-left: -15px">
                                                 <span class="page-links">
                                                     {% if brother_list.has_previous %}
                                                         <a href="{{ request.path }}?page={{ brother_list.previous_page_number }}"
