@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'brothersportal.apps.BrothersportalConfig',
     'import_export',
+    'photos.apps.PhotosConfig',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
@@ -104,6 +106,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+THUMBNAIL_ALIASES = {
+    '': {
+        'avatar': {'size': (150, 150), 'crop': True},
+    },
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -125,6 +133,10 @@ USE_TZ = True
 STATIC_ROOT = 'static/collect'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ( os.path.join('static'), )
+
+# Media is the folder where photos will be stored
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "asig-website/media")
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/brothersportal/'
