@@ -262,6 +262,8 @@ def export_data_csv(request):
         pk = obj.object.pk
         brothers_list.append(Brother.objects.values_list('first_name', 'last_name', 'email').get(pk=pk))
 
+    # do something else with the list if you want
+
     for obj in brothers_list:
         writer.writerow(obj)
 
