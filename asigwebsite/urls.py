@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.conf import settings
 from django.conf.urls import include
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
@@ -23,6 +25,8 @@ urlpatterns = [
     url(r'^', include('core.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^brothersportal/', include('brothersportal.urls')),
+    url(r'^photos/', include('photos.urls')),
+
 ]
 
 #Add Django site authentication urls (for registration, logout, password management)
@@ -32,3 +36,6 @@ urlpatterns += [
         name='login'),
     url(r'^accounts/', include('django.contrib.auth.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
