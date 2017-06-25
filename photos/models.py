@@ -6,6 +6,7 @@ from sorl.thumbnail import ImageField
 
 class Photo(models.Model):
 	title = models.CharField(max_length=200)
+	caption = models.CharField(default= "", max_length=500)
 	width = models.IntegerField(default=0)
 	height = models.IntegerField(default=0)
 	image = models.ImageField(null=False, blank=False)
