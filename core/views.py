@@ -14,5 +14,8 @@ def index(request):
         'index.html',
     )
 
-def about(request):
+def ZYChapterHistory(request):
 	return render(request, 'about/ZYChapterHistory.html')
+
+def NationalsHistory(request):
+	return render(request, 'about/NationalsHistory.html')
