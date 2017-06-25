@@ -13,3 +13,6 @@ def index(request):
         request,
         'index.html',
     )
+
+def about(request):
+	return render(request, 'about/ZYChapterHistory.html')
