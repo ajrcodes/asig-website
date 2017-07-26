@@ -35,7 +35,7 @@
 										<ul>
 											<li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
 											<li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
-											<li><a href="#">Current Leadership</a></li>
+											<li><a href="{% url 'NationalsHistory' %}"></a></li>
 											<li><a href="#">Photo Gallery</a></li>
 										</ul>
 									</li>
@@ -84,21 +84,21 @@
 											<h2>Alpha Sigma Phi</h2>
 
 											<p> Alpha Sigma Phi is America's 10th Oldest Collegiate Fraternity, founded at
-												Yale University on December 6th, 1845. Alpha Sigma Phi was built upon the 
+												Yale University on December 6th, 1845. Alpha Sigma Phi was built upon the
 												principles of silence, charity, purity, honor, and patriotism, striving to
 												be the organization of choice for qualified collegiate men. Alpha Sigma Phi
 												continues to grow in National size, as more chapters charter each year, adding
 												to an already strong foundation. Through the impacts seen on these college
 												campuses, Alpha Sig aims to better the world, through better men.</p>
-											<p> "Alpha Sigma Phi is not interested in only becoming the fraternity of choice, 
-												for this perspective unnecessarily narrows our recruitment efforts to those 
-												inclined to go Greek. We instead, will be focused on appealing to a broader 
-												base of undergraduate men, thereby competing directly with other activities 
-												and organizations on today's campuses. By so doing, we help to ensure that 
+											<p> "Alpha Sigma Phi is not interested in only becoming the fraternity of choice,
+												for this perspective unnecessarily narrows our recruitment efforts to those
+												inclined to go Greek. We instead, will be focused on appealing to a broader
+												base of undergraduate men, thereby competing directly with other activities
+												and organizations on today's campuses. By so doing, we help to ensure that
 												we attract and recruit the very best and brightest undergraduate men.
 												We have chosen to define our Fraternity as a co-curricular organization to underscore our desire to partner with the institutions that host our chapters in their endeavor to prepare their students for success after college."
 
-								
+
 
 										</article>
 
@@ -128,12 +128,12 @@
 
 		<!-- Scripts -->
 
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static 'assets/js/skel.min.js' %}"></script>
+		<script src="{% static 'assets/js/util.js' %}"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="{% static 'assets/js/main.js' %}"></script>
 
 	</body>
 </html>
