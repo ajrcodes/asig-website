@@ -34,7 +34,7 @@
 										<a href="#">About</a>
 										<ul>
 											<li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
-											<li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
+											<li class = "current"><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
 											<li><a href="#">Current Leadership</a></li>
 											<li><a href="#">Photo Gallery</a></li>
 										</ul>
@@ -128,12 +128,12 @@
 
 		<!-- Scripts -->
 
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
+            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
 
 	</body>
 </html>
