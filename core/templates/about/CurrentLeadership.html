@@ -34,13 +34,8 @@
 										<a href="#">About</a>
 										<ul>
 											<li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
-<<<<<<< HEAD
-											<li class = "current"><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
-											<li><a href="#">Current Leadership</a></li>
-=======
 											<li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
-											<li><a href="{% url 'NationalsHistory' %}"></a></li>
->>>>>>> 8f017fc2823d9a8bc615611026e1b8f70cb776c2
+											<li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
 											<li><a href="#">Photo Gallery</a></li>
 										</ul>
 									</li>
@@ -64,50 +59,57 @@
 
 			<!-- Main -->
 				<div id="main-wrapper">
+					<div class "10u 12u">
 					<div class="container">
-						<div class="row 200%">
-							<div class="4u 12u$(medium)">
-								<div id="sidebar">
 
-									<!-- Sidebar -->
-										<section>
-											<img src="{% static 'images/alphasigheadericon.png' %}" alt="" />
-
-											<footer>
-												<a href="http://alphasigmaphi.org/" class="button icon fa-info-circle">Find out more</a>
-											</footer>
-										</section>
-
-								</div>
-							</div>
-							<div class="8u 12u$(medium) important(medium)">
-								<div id="content">
+								<div id = "content">
 
 									<!-- Content -->
-										<article>
 
-											<h2>Alpha Sigma Phi</h2>
+									<h2>Current Leadership</h2>
+									<div class "row">
+										<div class "10u 12u(medium)" style = "float: left"; "margin-left: 100px">
+											<img src = "{% static 'images/uva.jpg' %}" height = "225" width = "300" alt="" />
+											<br>
+											<strong> President: </strong> Ryan Donovan
+										</div>
 
-											<p> Alpha Sigma Phi is America's 10th Oldest Collegiate Fraternity, founded at
-												Yale University on December 6th, 1845. Alpha Sigma Phi was built upon the
-												principles of silence, charity, purity, honor, and patriotism, striving to
-												be the organization of choice for qualified collegiate men. Alpha Sigma Phi
-												continues to grow in National size, as more chapters charter each year, adding
-												to an already strong foundation. Through the impacts seen on these college
-												campuses, Alpha Sig aims to better the world, through better men.</p>
-											<p> "Alpha Sigma Phi is not interested in only becoming the fraternity of choice,
-												for this perspective unnecessarily narrows our recruitment efforts to those
-												inclined to go Greek. We instead, will be focused on appealing to a broader
-												base of undergraduate men, thereby competing directly with other activities
-												and organizations on today's campuses. By so doing, we help to ensure that
-												we attract and recruit the very best and brightest undergraduate men.
-												We have chosen to define our Fraternity as a co-curricular organization to underscore our desire to partner with the institutions that host our chapters in their endeavor to prepare their students for success after college."
+										<div class "10u 12u(medium)" style  = "float: left"; "margin-left: 100px">
+											<img src = "{% static 'images/uva.jpg' %}" height = "225" width = "300" alt="" />
+											<br>
+											<strong> Vice President: </strong> Mahi Shapally
+										</div>
+										<!--
+											<br>
+											<strong> Recruitment Director: </strong> Sam Mirzai
+											<br>
+											<strong> Treasurer: </strong> Danny Thompson
+											<br>
+											<strong> Secretary: </strong>  Andrew Roberts
+											<br>
+											<strong> Membership Education:</strong> Andrew Shaeffer
+											<br>
+											<strong> Alumni Director: </strong>  Josh Davis
+											<br>
+											<strong> Scholarship Director: </strong> Tom Albed
+											<br>
+											<strong> Marshall: </strong> Saul Pasco
+											<br>
+											<strong> Sergaent at Arms: </strong>  Will Southard
+											<br>
+											<strong> New Member Educator: </strong> Hank Phillips
+											<br>
+											<strong> Philanthropy Director: </strong> Colin Cavanagh and Ryan Polsky
+											<br>
+											<strong> Social Chair: </strong> Chris Wenger
+											<br>
+											<strong> Housing Director: </strong> Jon Bugg
+											<br>
+											<strong> Risk Management Director: </strong> Taylor Flynt
+											<br>
+											<strong> Athletic Director: </strong> Shafat Khan -->
 
 
-
-										</article>
-
-								</div>
 							</div>
 						</div>
 					</div>
@@ -133,21 +135,12 @@
 
 		<!-- Scripts -->
 
-<<<<<<< HEAD
-            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="{% static 'assets/js/main.js' %}"></script>
-=======
 		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
 		<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
 		<script src="{% static 'assets/js/skel.min.js' %}"></script>
 		<script src="{% static 'assets/js/util.js' %}"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="{% static 'assets/js/main.js' %}"></script>
->>>>>>> 8f017fc2823d9a8bc615611026e1b8f70cb776c2
 
 	</body>
 </html>

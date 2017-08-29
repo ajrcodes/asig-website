@@ -19,3 +19,6 @@ def ZYChapterHistory(request):
 
 def NationalsHistory(request):
 	return render(request, 'about/NationalsHistory.html')
+
+def CurrentLeadership(request):
+	return render(request, 'about/CurrentLeadership.html')
