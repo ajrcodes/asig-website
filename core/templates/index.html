@@ -1,201 +1,144 @@
+{% extends "homepage_generic.html" %}
+
 {% load static %}
-<!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>ΑΣΦ UVA</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body class="homepage">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
+{% block navbar %}
+    <nav id="nav">
+        <ul>
+            <li class="current"><a href="{% url 'index' %}">Home</a></li>
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
+                    <li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
+                    <li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
+                    <li><a href="#">Photo Gallery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">News & Events</a>
+                <ul>
+                    <li><a href="#">Newsletters</a></li>
+                    <li><a href="#">Recent Events</a></li>
+                    <li><a href="#">Rush</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Alumni</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="{% url 'portal' %}">Brothers Portal</a></li>
+        </ul>
+    </nav>
+{% endblock %}
 
-						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="{% url 'index' %}">ΑΣΦ</a></h1>
-							</div>
+{% block content %}
+    <!-- Banner -->
+    <div id="banner-wrapper">
+        <div id="banner" class="box container">
+            <div class="row">
+                <div class="7u 12u(medium)">
+                    <h2>Alpha Sigma Phi</h2>
+                    <p> University of Virginia </br>
+                        Zeta Upsilon Chapter </br>
+                        Est. 2014 </p>
+                </div>
+                <div class="5u 12u(medium)" align="center">
+                    <img src="{% static 'images/alphasigheadericon.png' %}" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li class="current"><a href="{% url 'index' %}">Home</a></li>
-									<li>
-										<a href="#">About</a>
-										<ul>
-											<li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
-											<li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
-											<li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
-											<li><a href="#">Photo Gallery</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">News & Events</a>
-										<ul>
-											<li><a href="#">Newsletters</a></li>
-											<li><a href="#">Recent Events</a></li>
-											<li><a href="#">Rush</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Alumni</a></li>
-									<li><a href="#">Support</a></li>
-									<li><a href="#">Contact</a></li>
-									<li><a href="{% url 'portal' %}">Brothers Portal</a></li>
-								</ul>
-							</nav>
+    <!-- Features -->
+    <div id="features-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="4u 12u(medium)">
+                    <!-- Box -->
+                    <section class="box feature">
+                        <a href="{% url 'photos' %}" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                                <h2>Photo Gallery</h2>
+                            </header>
+                            <p>View photos from recent reunions, events, and more. </br>
+                                                                                   </br>
+                                                                                    </p>
+                        </div>
+                    </section>
+                </div>
 
-					</header>
-				</div>
+                <div class="4u 12u(medium)">
+                    <!-- Box -->
+                    <section class="box feature">
+                        <a href="#" class="image featured"><img src="{% static 'images/pic02.jpg' %}" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                                <h2>Alumni</h2>
+                            </header>
+                            <p>Keep up with the growing alumni base of Alpha Sigma Phi or share your own alumni updates.</p>
+                        </div>
+                    </section>
+                </div>
 
-			<!-- Banner -->
-				<div id="banner-wrapper">
-					<div id="banner" class="box container">
-						<div class="row">
-							<div class="7u 12u(medium)">
-								<h2>Alpha Sigma Phi</h2>
-								<p> University of Virginia </br>
-									Zeta Upsilon Chapter </br>
-									Est. 2014 </p>
-							</div>
-							<div class="5u 12u(medium)" align="center">
-								<img src="{% static 'images/alphasigheadericon.png' %}" alt="" />
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="4u 12u(medium)">
+                    <!-- Box -->
+                    <section class="box feature">
+                        <a href="#" class="image featured"><img src="{% static 'images/pic03.jpg' %}" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                                <h2>Support</h2>
+                            </header>
+                            <p>Find out how you can support our brotherhood's housing search, event schedule,
+                                and chapter culture. </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			<!-- Features -->
-				<div id="features-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="4u 12u(medium)">
+    <!-- Main -->
+    <div id="main-wrapper">
+        <div class="container">
+            <div class="row 200%">
+                <div class="4u 12u(medium)">
 
-								<!-- Box -->
-									<section class="box feature">
-										<a href="{% url 'photos' %}" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
-										<div class="inner">
-											<header>
-												<h2>Photo Gallery</h2>
-											</header>
-											<p>View photos from recent reunions, events, and more. </br>
-																								   </br>
-																									</p>
-										</div>
-									</section>
+                    <!-- Sidebar -->
+                        <div id="sidebar">
 
-							</div>
-							<div class="4u 12u(medium)">
+                            <!-- <section class="widget thumbnails">
+                                <div class="grid">
+                                    <div class="row 50%">
+                                        <div class="6u"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
+                                        <div class="6u"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
+                                        <div class="6u"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
+                                        <div class="6u"><a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a></div>
+                                    </div>
+                                </div>
+                                <a href="#" class="button icon fa-file-text-o">More</a> BUTTON
+                            </section> -->
+                            <h4>INSERT A PICTURE OF THE CHAPTER HERE</h4>
+                        </div>
 
-								<!-- Box -->
-									<section class="box feature">
-										<a href="#" class="image featured"><img src="{% static 'images/pic02.jpg' %}" alt="" /></a>
-										<div class="inner">
-											<header>
-												<h2>Alumni</h2>
-											</header>
-											<p>Keep up with the growing alumni base of Alpha Sigma Phi or share your own alumni updates.</p>
-										</div>
-									</section>
+                </div>
+                <div class="8u 12u(medium) important(medium)">
 
-							</div>
-							<div class="4u 12u(medium)">
+                    <!-- Content -->
+                        <div id="content">
+                            <section class="last">
+                                <h3>Alumni and Friends of ΑΣΦ ZY Chapter,</h3>
+                                <p>This is <strong>Verti</strong>, a free and fully responsive HTML5 site template by <a href="http://html5up.net">HTML5 UP</a>.
+                                Verti is released under the <a href="http://html5up.net/license">Creative Commons Attribution license</a>, so feel free to use it for any personal or commercial project you might have going on (just don't forget to credit us for the design!)</p>
+                                <p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet phasellus quam turpis.</p>
+                                <!-- <a href="#" class="button icon fa-arrow-circle-right">Continue Reading</a> -->
+                                <h4> Ryan Donovan </h4>
+                                <h4> President, ΑΣΦ ZY Chapter</h4>
+                            </section>
+                        </div>
 
-								<!-- Box -->
-									<section class="box feature">
-										<a href="#" class="image featured"><img src="{% static 'images/pic03.jpg' %}" alt="" /></a>
-										<div class="inner">
-											<header>
-												<h2>Support</h2>
-											</header>
-											<p>Find out how you can support our brotherhood's housing search, event schedule, 
-												and chapter culture. </p>
-										</div>
-									</section>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-			<!-- Main -->
-				<div id="main-wrapper">
-					<div class="container">
-						<div class="row 200%">
-							<div class="4u 12u(medium)">
-
-								<!-- Sidebar -->
-									<div id="sidebar">
-
-										<!-- <section class="widget thumbnails">
-											<div class="grid">
-												<div class="row 50%">
-													<div class="6u"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
-													<div class="6u"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
-													<div class="6u"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
-													<div class="6u"><a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a></div>
-												</div>
-											</div>
-											<a href="#" class="button icon fa-file-text-o">More</a> BUTTON 
-										</section> -->
-										<h4>INSERT A PICTURE OF THE CHAPTER HERE</h4>
-									</div>
-
-							</div>
-							<div class="8u 12u(medium) important(medium)"> 
-
-								<!-- Content -->
-									<div id="content">
-										<section class="last">
-											<h3>Alumni and Friends of ΑΣΦ ZY Chapter,</h3>
-											<p>This is <strong>Verti</strong>, a free and fully responsive HTML5 site template by <a href="http://html5up.net">HTML5 UP</a>.
-											Verti is released under the <a href="http://html5up.net/license">Creative Commons Attribution license</a>, so feel free to use it for any personal or commercial project you might have going on (just don't forget to credit us for the design!)</p>
-											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet phasellus quam turpis.</p>
-											<!-- <a href="#" class="button icon fa-arrow-circle-right">Continue Reading</a> -->
-											<h4> Ryan Donovan </h4>
-											<h4> President, ΑΣΦ ZY Chapter</h4>
-										</section>
-									</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
-						<div class="row">
-							<div class="12u">
-								<div id="copyright">
-									<ul class="menu">
-										<li>&copy; ΑΣΦ ZY Chapter. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</footer>
-				</div>
-
-			</div>
-
-		<!-- Scripts -->
-
-			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="{% static 'assets/js/main.js' %}"></script>
-
-	</body>
-</html>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

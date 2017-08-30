@@ -1,146 +1,281 @@
+{% extends "homepage_generic.html" %}
+
 {% load static %}
-<!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Alpha Sigma Phi History</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body class="left-sidebar">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
+{% block navbar %}
+    <nav id="nav">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="current">
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
+                    <li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
+                    <li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
+                    <li><a href="#">Photo Gallery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">News & Events</a>
+                <ul>
+                    <li><a href="#">Newsletters</a></li>
+                    <li><a href="#">Recent Events</a></li>
+                    <li><a href="#">Rush</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Alumni</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="{% url 'portal' %}">Brothers Portal</a></li>
+        </ul>
+    </nav>
+{% endblock %}
 
-						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="{% url 'index' %}">ΑΣΦ</a></h1>
-							</div>
+{% block content %}
+    <div id="main-wrapper">
+        <!-- Features -->
+        <div id="features-wrapper">
+            <div class="container">
+                <!-- Row 1 -->
+                <div class="row">
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Ryan Donovan</h2>
+                                </header>
+                                <p> President </br>
+                                    Delta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="{% url 'index' %}">Home</a></li>
-									<li class = "current">
-										<a href="#">About</a>
-										<ul>
-											<li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
-											<li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
-											<li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
-											<li><a href="#">Photo Gallery</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">News & Events</a>
-										<ul>
-											<li><a href="#">Newsletters</a></li>
-											<li><a href="#">Recent Events</a></li>
-											<li><a href="#">Rush</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Alumni</a></li>
-									<li><a href="#">Support</a></li>
-									<li><a href="#">Contact</a></li>
-									<li><a href="{% url 'portal' %}">Brothers Portal</a></li>
-								</ul>
-							</nav>
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Mahi Shapally</h2>
+                                </header>
+                                <p> Vice President </br>
+                                    Delta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-					</header>
-				</div>
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Sam Mirzai</h2>
+                                </header>
+                                <p> Recruitment Director </br>
+                                    Delta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
 
-			<!-- Main -->
-				<div id="main-wrapper">
-					<div class "10u 12u">
-					<div class="container">
+                <!-- Row 2 -->
+                <div class="row">
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Danny Thompson</h2>
+                                </header>
+                                <p> Treasurer </br>
+                                    Zeta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-								<div id = "content">
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Andrew Roberts</h2>
+                                </header>
+                                <p> Secretary </br>
+                                    Delta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-									<!-- Content -->
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Andrew Shaeffer</h2>
+                                </header>
+                                <p>Membership Education </br>
+                                    Eta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
 
-									<h2>Current Leadership</h2>
-									<div class "row">
-										<div class "10u 12u(medium)" style = "float: left"; "margin-left: 100px">
-											<img src = "{% static 'images/uva.jpg' %}" height = "225" width = "300" alt="" />
-											<br>
-											<strong> President: </strong> Ryan Donovan
-										</div>
+                <!-- Row 3 -->
+                <div class="row">
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Josh Davis</h2>
+                                </header>
+                                <p> Alumni Director </br>
+                                    Zeta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-										<div class "10u 12u(medium)" style  = "float: left"; "margin-left: 100px">
-											<img src = "{% static 'images/uva.jpg' %}" height = "225" width = "300" alt="" />
-											<br>
-											<strong> Vice President: </strong> Mahi Shapally
-										</div>
-										<!--
-											<br>
-											<strong> Recruitment Director: </strong> Sam Mirzai
-											<br>
-											<strong> Treasurer: </strong> Danny Thompson
-											<br>
-											<strong> Secretary: </strong>  Andrew Roberts
-											<br>
-											<strong> Membership Education:</strong> Andrew Shaeffer
-											<br>
-											<strong> Alumni Director: </strong>  Josh Davis
-											<br>
-											<strong> Scholarship Director: </strong> Tom Albed
-											<br>
-											<strong> Marshall: </strong> Saul Pasco
-											<br>
-											<strong> Sergaent at Arms: </strong>  Will Southard
-											<br>
-											<strong> New Member Educator: </strong> Hank Phillips
-											<br>
-											<strong> Philanthropy Director: </strong> Colin Cavanagh and Ryan Polsky
-											<br>
-											<strong> Social Chair: </strong> Chris Wenger
-											<br>
-											<strong> Housing Director: </strong> Jon Bugg
-											<br>
-											<strong> Risk Management Director: </strong> Taylor Flynt
-											<br>
-											<strong> Athletic Director: </strong> Shafat Khan -->
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Tom Albed</h2>
+                                </header>
+                                <p> Scholarship Director </br>
+                                    Zeta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Saul Pasco</h2>
+                                </header>
+                                <p> Marshall </br>
+                                    Zeta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
 
-							</div>
-						</div>
-					</div>
-				</div>
+                <!-- Row 4 -->
+                <div class="row">
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2> Will Southard</h2>
+                                </header>
+                                <p> Sergeant at Arms </br>
+                                    Delta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2> Hank Phillips </h2>
+                                </header>
+                                <p> New Member Educator </br>
+                                    Alpha class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-						<div class="row">
-							<div class="12u">
-								<div id="copyright">
-									<ul class="menu">
-										<li>&copy; ΑΣΦ ZY Chapter. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</footer>
-				</div>
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Colin Cavanagh, Ryan Polsky</h2>
+                                </header>
+                                <p> Co-philanthropy directors </br>
+                                    Delta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
 
-			</div>
+                <!-- Row 5 -->
+                <div class="row">
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2> Chris Wenger </h2>
+                                </header>
+                                <p> Social Director </br>
+                                    Zeta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-		<!-- Scripts -->
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2> Hank Phillips </h2>
+                                </header>
+                                <p> New Member Educator </br>
+                                    Alpha class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
 
-		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-		<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
-		<script src="{% static 'assets/js/skel.min.js' %}"></script>
-		<script src="{% static 'assets/js/util.js' %}"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="{% static 'assets/js/main.js' %}"></script>
-
-	</body>
-</html>
+                    <div class="4u 12u(medium)">
+                        <!-- Box -->
+                        <section class="box feature">
+                            <a class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                            <div class="inner">
+                                <header>
+                                    <h2>Colin Cavanagh, Ryan Polsky</h2>
+                                </header>
+                                <p> Co-philanthropy directors </br>
+                                    Delta class
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
