@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'import_export',
     'photos.apps.PhotosConfig',
     'easy_thumbnails',
+    'newsletters.apps.NewslettersConfig',
 ]
 
 MIDDLEWARE = [
