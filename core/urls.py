@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^about/zy-chapter-history', views.ZYChapterHistory, name='ZYChapterHistory'),
     url(r'^about/nationals-history', views.NationalsHistory, name='NationalsHistory'),
     url(r'^about/current-leadership', views.CurrentLeadership, name='CurrentLeadership'),
-
+    url(r'^contact', views.ContactPage, name='ContactPage')
 ]
