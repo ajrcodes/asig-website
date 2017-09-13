@@ -12,7 +12,7 @@
                     <li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
                     <li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
                     <li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
-                    <li><a href="#">Photo Gallery</a></li>
+                    <li><a href="{% url 'photos' %}">Photo Gallery</a></li>
                 </ul>
             </li>
             <li>
@@ -118,7 +118,9 @@
                                 </div>
                                 <a href="#" class="button icon fa-file-text-o">More</a> BUTTON
                             </section> -->
-                            <h4>INSERT A PICTURE OF THE CHAPTER HERE</h4>
+                            <section>
+                              <img src="{% static 'images/chapter.jpg' %}" height = "225" width = "300" alt="" />
+                            </section>
                         </div>
 
                 </div>

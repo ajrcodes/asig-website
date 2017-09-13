@@ -34,10 +34,10 @@
 									<li>
 										<a href="#">About</a>
 										<ul>
-											<li><a href="#">ZY Chapter History</a></li>
-											<li><a href="#">Nationals History</a></li>
-											<li><a href="#">Current Leadership</a></li>
-											<li><a href="#">Photo Gallery</a></li>
+											<li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
+											<li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
+											<li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
+											<li><a href="{% url 'photos' %}">Photo Gallery</a></li>
 										</ul>
 									</li>
 									<li>
@@ -63,17 +63,17 @@
 							<div class = "container">
 								<h2>Photo Gallery</h2>
 								<div class = "row">
-								
-								
+
+
 								{% for photo in photos %}
 								{% if photo.image %}
 								{% load thumbnail %}
 
 								<div class "4u 4u(medium)">
-								
+
 									<a href = '{{ photo.image.url }}'>
 									<img src="{{ photo.image|thumbnail_url:'avatar' }}" alt="" /> </a>
-									
+
 									<p><strong>{{photo.title}}</strong><br>
 										{{photo.caption}}</p>
 									</div>
