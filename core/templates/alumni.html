@@ -1,0 +1,59 @@
+{% extends "homepage_generic.html" %}
+
+{% load static %}
+
+{% block navbar %}
+    <nav id="nav">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
+                    <li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
+                    <li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
+                    <li><a href="#">Photo Gallery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">News & Events</a>
+                <ul>
+                    <li><a href="#">Newsletters</a></li>
+                    <li><a href="#">Recent Events</a></li>
+                    <li><a href="#">Rush</a></li>
+                </ul>
+            </li>
+            <li class="current"><a href="{% url 'AlumniPage' %}">Alumni</a></li>
+            <li><a href="{% url 'SupportPage' %}">Support</a></li>
+            <li><a href="{% url 'ContactPage' %}">Contact</a></li>
+            <li><a href="{% url 'portal' %}">Brothers Portal</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <!-- Contact content -->
+    <div id="banner-wrapper">
+        <div id="banner" class="box container">
+            <h3> Give Us an Update!</h3>
+            <form>
+                <div class="row">
+                    <div class="6u 12u(medium)">
+                        <input type="text" id="input-name" placeholder="Name"> </br>
+                        <input type="email" id="input-email" placeholder="Email address"> </br>
+                        <div style="text-align: right">
+                            Graduation Year: <input style="padding-top: 10px" type="number" id="input-gradyr">
+                        </div>
+                    </div>
+                    <div class="6u 12u(medium)">
+                        <!-- Height is 240 to match the heights of the three inputs -->
+                        <textarea style="height: 230px" name="message" type="text" id="input-message" placeholder="Message"></textarea>
+                    </div>
+                </div> </br>
+                <div style="text-align: right">
+                    <input type="submit" value="Submit" id="input-submit">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

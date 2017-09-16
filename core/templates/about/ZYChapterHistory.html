@@ -1,154 +1,84 @@
+{% extends "homepage_generic.html" %}
+
 {% load static %}
-<!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>ZY Chapter History</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body class="left-sidebar">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
+{% block navbar %}
+    <nav id="nav">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="current">
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
+                    <li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
+                    <li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
+                    <li><a href="{% url 'photos' %}">Photo Gallery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">News & Events</a>
+                <ul>
+                    <li><a href="#">Newsletters</a></li>
+                    <li><a href="#">Recent Events</a></li>
+                    <li><a href="#">Rush</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'AlumniPage' %}">Alumni</a></li>
+            <li><a href="{% url 'SupportPage' %}">Support</a></li>
+            <li><a href="{% url 'ContactPage' %}">Contact</a></li>
+            <li><a href="{% url 'portal' %}">Brothers Portal</a></li>
+        </ul>
+    </nav>
+{% endblock %}
 
-						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="{% url 'index' %}">ΑΣΦ</a></h1>
-							</div>
+{% block content %}
+    <!-- Main -->
+    <div id="main-wrapper">
+        <div class="container">
+            <div class="row 200%">
+                <div class="4u 12u$(medium)">
+                    <div id="sidebar">
+                        <!-- Sidebar -->
+                        <section style="text-align: center">
+                            <img src="{% static 'images/uva.jpg' %}" height = "225" width = "300" alt="" /></br>
+                            <strong> The University of Virginia Lawn </strong>
+                            <footer>
+                                <a href="https://virginiaifc.com/chapters/alpha-sigma-phi/" class="button icon fa-info-circle">Find out more</a>
+                            </footer>
+                        </section>
+                        <section style="text-align: center">
+                            <img src="{% static 'images/chapter.jpg' %}" height = "225" width = "300" alt="" />
+                        </section>
+                    </div>
+                </div>
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="{% url 'index' %}">Home</a></li>
-									<li class = "current">
-										<a href="#">About</a>
-										<ul>
-											<li class = "current"><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
-											<li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
-											<li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
-											<li><a href="{% url 'photos' %}">Photo Gallery</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">News & Events</a>
-										<ul>
-											<li><a href="#">Newsletters</a></li>
-											<li><a href="#">Recent Events</a></li>
-											<li><a href="#">Rush</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Alumni</a></li>
-									<li><a href="#">Support</a></li>
-									<li><a href="{% url 'ContactPage' %}">Contact</a></li>
-									<li><a href="{% url 'portal' %}">Brothers Portal</a></li>
-								</ul>
-							</nav>
+                <div class="8u 12u$(medium) important(medium)">
+                    <div id="content">
+                        <!-- Content -->
+                        <article>
+                            <h2>Zeta Upsilon's History at UVA</h2>
 
-					</header>
-				</div>
+                            <p> Alpha Sigma Phi's Zeta Upsilon Chapter received our charter here at UVA on
+                                September 21, 2014, making us one of the youngest and fastest growing chapter
+                                on grounds. With the foundation provided by our founding fathers just a few
+                                years ago, we continue to improve each year, whether it be through the quality
+                                and quantity of our men, philanthropy, housing, academics, etc.</p>
 
-			<!-- Main -->
-				<div id="main-wrapper">
-					<div class="container">
-						<div class="row 200%">
-							<div class="4u 12u$(medium)">
-								<div id="sidebar">
-
-									<!-- Sidebar -->
-										<section>
-											<img src="{% static 'images/uva.jpg' %}" height = "225" width = "300" alt="" />
-											<strong> The University of Virginia Lawn </strong>
-											<footer>
-												<a href="https://virginiaifc.com/chapters/alpha-sigma-phi/" class="button icon fa-info-circle">Find out more</a>
-											</footer>
-										</section>
-
-										<section>
-
-											<img src="{% static 'images/chapter.jpg' %}" height = "225" width = "300" alt="" />
-										</section>
-
-								</div>
-							</div>
-							<div class="8u 12u$(medium) important(medium)">
-								<div id="content">
-
-									<!-- Content -->
-										<article>
-
-											<h2>Zeta Upsilon's History at UVA</h2>
-
-											<p> Alpha Sigma Phi's Zeta Upsilon Chapter received our charter here at UVA on
-												September 21, 2014, making us one of the youngest and fastest growing chapter
-												on grounds. With the foundation provided by our founding fathers just a few
-												years ago, we continue to improve each year, whether it be through the quality
-												and quantity of our men, philanthropy, housing, academics, etc.</p>
-
-											<h3>Today...</h3>
-											<p>We have grown to a size of 73 members, featuring a wide array of backgrounds,
-												interests and passions. Our members are involved in UVA groups such as the
-												University Guide Service, ROTC, Alternative Spring Break, Madison House, and
-												many more.</p>
-											<p>	We look forward to continued growth as we strive to empress a truly positive
-												impact on the University Community. Alpha Sigma Phi looks for motivated men
-												who seek brotherhood, leadership opportunities, and potential for personal growth.
-												We are very humbled by our short but meaningful history, as it serves as a constant
-												reminder of both where we came from and where we should be heading.</p>
-												<p> In the words of Founding Father, Hank Phillips, "It's not a bad life we live" </p>
-
-										</article>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
-
-						<div class="row">
-							<div class="12u">
-								<div id="copyright">
-									<ul class="menu">
-										<li>&copy; ΑΣΦ ZY Chapter. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</footer>
-				</div>
-
-			</div>
-
-		<!-- Scripts -->
-
-<<<<<<< HEAD
-            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="{% static 'assets/js/main.js' %}"></script>
-=======
-		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-		<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
-		<script src="{% static 'assets/js/skel.min.js' %}"></script>
-		<script src="{% static 'assets/js/util.js' %}"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="{% static 'assets/js/main.js' %}"></script>
->>>>>>> 8f017fc2823d9a8bc615611026e1b8f70cb776c2
-
-	</body>
-</html>
+                            <h3>Today...</h3>
+                            <p>We have grown to a size of 73 members, featuring a wide array of backgrounds,
+                                interests and passions. Our members are involved in UVA groups such as the
+                                University Guide Service, ROTC, Alternative Spring Break, Madison House, and
+                                many more.</p>
+                            <p>	We look forward to continued growth as we strive to empress a truly positive
+                                impact on the University Community. Alpha Sigma Phi looks for motivated men
+                                who seek brotherhood, leadership opportunities, and potential for personal growth.
+                                We are very humbled by our short but meaningful history, as it serves as a constant
+                                reminder of both where we came from and where we should be heading.</p>
+                                <p> In the words of Founding Father, Hank Phillips, "It's not a bad life we live" </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
