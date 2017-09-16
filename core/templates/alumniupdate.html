@@ -23,7 +23,7 @@
                     <li><a href="#">Rush</a></li>
                 </ul>
             </li>
-            <li class="current"><a href="{% url 'AlumniPage' %}">Alumni</a></li>
+            <li class="current"><a href="{% url 'AlumniUpdate' %}">Alumni</a></li>
             <li><a href="{% url 'SupportPage' %}">Support</a></li>
             <li><a href="{% url 'ContactPage' %}">Contact</a></li>
             <li><a href="{% url 'portal' %}">Brothers Portal</a></li>
@@ -35,7 +35,14 @@
     <!-- Contact content -->
     <div id="banner-wrapper">
         <div id="banner" class="box container">
+            <h2>Alumni Updates</h2> </br>
+
             <h3> Give Us an Update!</h3>
+                Get a new job?  Recently get married?  Have a kid?  Went on an awesome trip?  Your brothers want to know!
+                News items and photos about you and your Alpha Sig brothers are posted under the “Alumni News”
+                section of our Newsletters.
+            </br>
+            </br>
             <form>
                 <div class="row">
                     <div class="6u 12u(medium)">
@@ -50,9 +57,7 @@
                         <textarea style="height: 230px" name="message" type="text" id="input-message" placeholder="Message"></textarea>
                     </div>
                 </div> </br>
-                <div style="text-align: right">
-                    <input type="submit" value="Submit" id="input-submit">
-                </div>
+                <input type="submit" value="Submit" id="input-submit">
             </form>
         </div>
     </div>

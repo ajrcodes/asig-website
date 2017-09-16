@@ -23,8 +23,8 @@ def NationalsHistory(request):
 def CurrentLeadership(request):
 	return render(request, 'about/CurrentLeadership.html')
 
-def AlumniPage(request):
-	return render(request, 'alumni.html')
+def AlumniUpdate(request):
+	return render(request, 'alumniupdate.html')
 
 def SupportPage(request):
 	return render(request, 'support.html')
