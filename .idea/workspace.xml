@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae6797e2-bc43-426c-9f39-a0b1a8edb702" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ebextensions/python.config" afterPath="$PROJECT_DIR$/.ebextensions/python.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asigwebsite/settings.py" afterPath="$PROJECT_DIR$/asigwebsite/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,12 +42,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="python.config" pinned="false" current-in-tab="true">
+      <file leaf-file-name="python.config" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.ebextensions/python.config">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="64">
               <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asigwebsite/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+              <folding>
+                <marker date="1506891410000" expanded="true" signature="942:1134" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +116,6 @@
         <option value="$PROJECT_DIR$/photos/models.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/core/templates/homepage_generic.html" />
-        <option value="$PROJECT_DIR$/asigwebsite/settings.py" />
         <option value="$PROJECT_DIR$/templates/login_generic.html" />
         <option value="$PROJECT_DIR$/asigwebsite/urls.py" />
         <option value="$PROJECT_DIR$/core/templates/alumni.html" />
@@ -121,6 +132,7 @@
         <option value="$PROJECT_DIR$/.ebextensions/django.config" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/.ebextensions/python.config" />
+        <option value="$PROJECT_DIR$/asigwebsite/settings.py" />
       </list>
     </option>
   </component>
@@ -738,20 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asigwebsite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="84" column="38" lean-forward="false" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
-          <folding>
-            <marker date="1505325304000" expanded="true" signature="887:1079" ph="..." />
-            <marker date="1505325304000" expanded="true" signature="3092:3164" ph="..." />
-            <marker date="1505325304000" expanded="true" signature="3102:3161" ph="..." />
-            <marker date="1505325304000" expanded="true" signature="3168:3244" ph="..." />
-            <marker date="1505325304000" expanded="true" signature="3340:3441" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/login_generic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -928,6 +926,16 @@
         <state relative-caret-position="64">
           <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asigwebsite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+          <folding>
+            <marker date="1506891410000" expanded="true" signature="942:1134" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
