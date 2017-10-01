@@ -37,13 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'phonenumber_field',
     'core.apps.CoreConfig',
+    'photos.apps.PhotosConfig',
     'brothersportal.apps.BrothersportalConfig',
+    'phonenumber_field',
     'import_export',
     'photos.apps.PhotosConfig',
     'easy_thumbnails',
     'newsletters.apps.NewslettersConfig',
+    'easy_thumbnails'
 ]
 
 MIDDLEWARE = [
@@ -106,6 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+# Thumbnail settings
 
 THUMBNAIL_ALIASES = {
     '': {

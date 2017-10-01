@@ -22,3 +22,6 @@ def NationalsHistory(request):
 
 def CurrentLeadership(request):
 	return render(request, 'about/CurrentLeadership.html')
+
+def ContactPage(request):
+	return render(request, 'contact.html')
