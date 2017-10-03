@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'brothersportal.apps.BrothersportalConfig',
     'phonenumber_field',
     'import_export',
-    'photos.apps.PhotosConfig',
-    'easy_thumbnails',
     'newsletters.apps.NewslettersConfig',
     'easy_thumbnails'
 ]
