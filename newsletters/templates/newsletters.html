@@ -55,15 +55,12 @@
                       <!-- Content -->
                       <article>
                         <h2>Newsletters</h2>
+                        <p>Keep up to date with the Zeta Upsilon Chapter of Alpha Sig</p>
                         {% for newsletter in newsletters %}
                         {% load thumbnail %}
-                        <a href = '{{newsletter.letter}}'> <strong>{{newsletter.title}}: </strong> </a>
+                        <a href = '{{newsletter.letter}}'> <strong>{{newsletter.title}} </strong> </a>
                         <br>
                         {% endfor %}
-                        <br>
-                          These are pdf links
-                          <br>
-                          JD needs to send me the newsletters first
 
                         </article>
                     </div>

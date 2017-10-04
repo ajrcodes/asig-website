@@ -5,3 +5,9 @@ class Newsletter(models.Model):
     title = models.CharField(max_length=200)
     letter = models.FileField(upload_to='../media/uploads/')
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    def __unicode__(self):
+	       return self.title
+
+    class Meta:
+	       ordering = ["-timestamp"]
