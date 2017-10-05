@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^brothersportal/', include('brothersportal.urls')),
     url(r'^photos/', include('photos.urls')),
+    url(r'^newsletters/', include('newsletters.urls')),
 
 ]
 

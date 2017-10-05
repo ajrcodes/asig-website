@@ -1,0 +1,71 @@
+{% extends "homepage_generic.html" %}
+
+{% load static %}
+
+{% block navbar %}
+    <nav id="nav">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
+                    <li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
+                    <li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
+                    <li><a href="{% url 'photos' %}">Photo Gallery</a></li>
+                </ul>
+            </li>
+            <li class = "current">
+                <a href="#">News & Events</a>
+                <ul>
+                    <li><a href="{% url 'newsletters' %}">Newsletters</a></li>
+
+                    <li><a href="#">Rush</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Alumni</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="{% url 'ContactPage' %}">Contact</a></li>
+            <li><a href="{% url 'portal' %}">Brothers Portal</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <!-- Main -->
+    <div id="main-wrapper">
+        <div class="container">
+            <div class="row 200%">
+                <div class="4u 12u$(medium)">
+
+                    <div id="sidebar">
+
+                        <!-- Sidebar -->
+                        <section>
+                            <div style="text-align: center">
+                                <img src="{% static 'images/delta.jpg' %}" height = "250" width ="300" alt=""/>
+
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+                <div class="8u 12u$(medium) important(medium)">
+                    <div id="content">
+                      <!-- Content -->
+                      <article>
+                        <h2>Newsletters</h2>
+                        <p>Keep up to date with the Zeta Upsilon Chapter of Alpha Sig</p>
+                        {% for newsletter in newsletters %}
+                        {% load thumbnail %}
+                        <a href = '{{newsletter.letter}}'> <strong>{{newsletter.title}} </strong> </a>
+                        <br>
+                        {% endfor %}
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

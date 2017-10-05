@@ -30,8 +30,8 @@
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li class="current"><a href="{% url 'index' %}">Home</a></li>
-									<li>
+									<li><a href="{% url 'index' %}">Home</a></li>
+									<li  class="current">
 										<a href="#">About</a>
 										<ul>
 											<li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
@@ -43,14 +43,14 @@
 									<li>
 										<a href="#">News & Events</a>
 										<ul>
-											<li><a href="#">Newsletters</a></li>
-											<li><a href="#">Recent Events</a></li>
+											<li><a href="{% url 'newsletters' %}">Newsletters</a></li>
+
 											<li><a href="#">Rush</a></li>
 										</ul>
 									</li>
 									<li><a href="#">Alumni</a></li>
 									<li><a href="#">Support</a></li>
-									<li><a href="#">Contact</a></li>
+									<li><a href="{% url 'ContactPage' %}">Contact</a></li>
 									<li><a href="{% url 'portal' %}">Brothers Portal</a></li>
 								</ul>
 							</nav>
