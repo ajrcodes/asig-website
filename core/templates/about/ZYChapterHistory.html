@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 {% extends "homepage_generic.html" %}
-=======
 {% load static %}
 <!DOCTYPE HTML>
 <!--
@@ -46,12 +44,12 @@
 										<a href="#">News & Events</a>
 										<ul>
 											<li><a href="{% url 'newsletters' %}">Newsletters</a></li>
-											
+
 											<li><a href="#">Rush</a></li>
 										</ul>
 									</li>
-									<li><a href="#">Alumni</a></li>
-									<li><a href="#">Support</a></li>
+									<li><a href="{% url 'AlumniUpdate' %}">Alumni</a></li>
+									<li><a href="{% url 'SupportPage' %}">Support</a></li>
 									<li><a href="{% url 'ContactPage' %}">Contact</a></li>
 									<li><a href="{% url 'portal' %}">Brothers Portal</a></li>
 								</ul>
