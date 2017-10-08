@@ -149,3 +149,5 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "asig-website/media")
 LOGIN_REDIRECT_URL = '/brothersportal/'
 
 LOGOUT_REDIRECT_URL = '/'
+
+# Phone number format

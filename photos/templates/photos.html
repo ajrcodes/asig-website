@@ -1,116 +1,88 @@
+{% extends "homepage_generic.html" %}
 {% load static %}
 {% load thumbnail %}
-<!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>ΑΣΦ UVA</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body class="homepage">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
+{% block navbar %}
+    <nav id="nav">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="current">
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
+                    <li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
+                    <li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
+                    <li><a href="{% url 'photos' %}">Photo Gallery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">News & Events</a>
+                <ul>
+                    <li><a href="{% url 'newsletters' %}">Newsletters</a></li>
+                    <li><a href="#">Rush</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'AlumniUpdate' %}">Alumni</a></li>
+            <li><a href="{% url 'SupportPage' %}">Support</a></li>
+            <li><a href="{% url 'ContactPage' %}">Contact</a></li>
+            <li><a href="{% url 'portal' %}">Brothers Portal</a></li>
+        </ul>
+    </nav>
+{% endblock %}
 
-						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="{% url 'index' %}">ΑΣΦ</a></h1>
-							</div>
+{% block content %}
+    <div id="main-wrapper">
+        <div class="container">
+            <div class="row 200%">
+                <div class="2u 12u$(medium)"></div>
+                <div class="10u 12u$(medium) important(medium)">
+                    <div id="content">
+                        <h2>Photo Gallery</h2> </br>
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="{% url 'index' %}">Home</a></li>
-									<li  class="current">
-										<a href="#">About</a>
-										<ul>
-											<li><a href="{% url 'ZYChapterHistory' %}">ZY Chapter History</a></li>
-											<li><a href="{% url 'NationalsHistory' %}">Nationals History</a></li>
-											<li><a href="{% url 'CurrentLeadership' %}">Current Leadership</a></li>
-											<li><a href="{% url 'photos' %}">Photo Gallery</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">News & Events</a>
-										<ul>
-											<li><a href="{% url 'newsletters' %}">Newsletters</a></li>
-
-											<li><a href="#">Rush</a></li>
-										</ul>
-									</li>
-									<li><a href="{% url 'AlumniUpdate' %}">Alumni</a></li>
-									<li><a href="{% url 'SupportPage' %}">Support</a></li>
-									<li><a href="{% url 'ContactPage' %}">Contact</a></li>
-									<li><a href="{% url 'portal' %}">Brothers Portal</a></li>
-								</ul>
-							</nav>
-
-					</header>
-				</div>
-
-					<div id="main-wrapper">
-						<div class = "10u 12u">
-							<div class = "container">
-								<h2>Photo Gallery</h2>
-								<div class = "row">
-
-
-								{% for photo in photos %}
-								{% if photo.image %}
-								{% load thumbnail %}
-
-								<div class "4u 4u(medium)">
-
-									<a href = '{{ photo.image.url }}'>
-									<img src="{{ photo.image|thumbnail_url:'avatar' }}" alt="" /> </a>
-
-									<p><strong>{{photo.title}}</strong><br>
-										{{photo.caption}}</p>
-									</div>
-
-								{% endif %}
-								{% endfor %}
-							</div>
-
-							</div>
-						</div>
-					</div>
-
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
-						<div class="row">
-							<div class="12u">
-								<div id="copyright">
-									<ul class="menu">
-										<li>&copy; ΑΣΦ ZY Chapter. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</footer>
-				</div>
-
-			</div>
-
-		<!-- Scripts -->
-
-			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="{% static 'assets/js/main.js' %}"></script>
-
-	</body>
-</html>
+                        <div class = "row">
+                            {% for photo in photos %}
+                                {% if photo.image %}
+                                    {% load thumbnail %}
+                                    <div class="box feature">
+                                        <div class="inner" style="padding: 3em 2em 2em 2em !important;">
+                                            <a href = '{{ photo.image.url }}'>
+                                                <img src="{{ photo.image|thumbnail_url:'avatar' }}" alt="" />
+                                            </a>
+                                            <p><strong>{{photo.title}}</strong><br>
+                                                    {{photo.caption}}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if forloop.counter|divisibleby:12%}
+                                    </div>
+                                    <div class="row">
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                        {% if is_paginated %}
+                            <div class="pagination" style="padding-top: 50px; margin-left: -15px">
+                                <span class="page-links">
+                                    {% if photos.has_previous %}
+                                        <a href="{{ request.path }}?page={{ photos.previous_page_number }}"
+                                           style="text-decoration: none">
+                                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                        </a>
+                                    {% endif %}
+                                    <span class="page-current">
+                                        Showing {{ photos.start_index }}-{{ photos.end_index }}
+                                        of {{ photos.paginator.count }} results
+                                    </span>
+                                    {% if photos.has_next %}
+                                        <a href="{{ request.path }}?page={{ photos.next_page_number }}">
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    {% endif %}
+                                </span>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
