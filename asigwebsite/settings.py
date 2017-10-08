@@ -26,7 +26,8 @@ SECRET_KEY = '-bw)qml3$9!f^!98uiuv%51qq^_*gn!d(-7ogjx3udjij))^6b'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'asigwebsite-dev3.us-east-1.elasticbeanstalk.com'
+    'asigwebsite-dev3.us-east-1.elasticbeanstalk.com',
+    '127.0.0.1'
 ]
 
 
